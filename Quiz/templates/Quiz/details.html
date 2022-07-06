@@ -1,0 +1,25 @@
+<div style="border-color: #000; border-width: 1; border-style: solid; margin: 10px; padding: 15px;">
+    <h1>{{quiz}}</h1>
+    <p>{{quiz.description}}</p>
+    <p>nº questões: {{n_questions}}</p>
+    <a href="../start/{{quiz.id}}">Começar</a>
+</div>
+<div style="border-color: #000; border-width: 1; border-style: solid; margin: 10px; padding: 15px;">
+    <h1>Leaderboard</h1>
+    <table>
+        <tr>
+            <th>Position</th>
+            <th>Name</th>
+            <th>Score</th>
+            <th>Time</th>
+        </tr>
+        {% for user in leaderboard %}
+            <tr>
+                <td>{{user.position}}</td>
+                <td>{{user.name}}</td>
+                <td>{{user.score}}/{{n_questions}}</td>
+                <td>{{user.time}}</td>
+            </tr>
+        {% endfor %}
+    </table>
+</div>

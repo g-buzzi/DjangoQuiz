@@ -1,0 +1,8 @@
+<h1>Welcome</h1>
+{% for quiz in quizzes %}
+        <div style="border-color: #000; border-width: 1; border-style: solid; margin: 10px; padding: 15px;">
+            <h1>{{quiz}}</h1>
+            <h2>ID: {{quiz.id}}</h2>
+            <a href="./details/{{quiz.id}}">Detalhes</a>
+        </div>
+{% endfor %}
