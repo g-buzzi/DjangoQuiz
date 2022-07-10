@@ -1,25 +1,57 @@
-<div style="border-color: #000; border-width: 1; border-style: solid; margin: 10px; padding: 15px;">
-    <h1>{{quiz}}</h1>
-    <p>{{quiz.description}}</p>
-    <p>nº questões: {{n_questions}}</p>
-    <a href="../start/{{quiz.id}}">Começar</a>
+{% extends "./base.html" %}
+{% load static %}
+
+{% block head %}
+    <link rel="stylesheet" href="{% static 'styles/details.css' %}"/>
+{% endblock %}
+
+{% block content %}
+
+<div class="details-container">
+    <h2 class="quiz-title">{{quiz}}</h2>
+    <p class="quiz-n-questions">{{n_questions}} perguntas</p>
+    <p class="quiz-description">{{quiz.description}}</p>
 </div>
-<div style="border-color: #000; border-width: 1; border-style: solid; margin: 10px; padding: 15px;">
-    <h1>Leaderboard</h1>
-    <table>
-        <tr>
-            <th>Position</th>
-            <th>Name</th>
-            <th>Score</th>
-            <th>Time</th>
-        </tr>
+
+<div class="button-container">
+    <div class="button" onclick="window.location.assign('../start/{{quiz.id}}')">Começar</div>
+</div>
+
+<div class="leaderboard-container">
+    <h2 class="leaderboard-title">Leaderboard</h2>
+    <div class="leaderboard">
+        <div class="leaderboard-header">
+            <div class="leaderboard-partition">
+                Posição
+            </div>
+            <div class="leaderboard-partition">
+                Nome
+            </div>
+            <div class="leaderboard-partition">
+                Tempo
+            </div>
+            <div class="leaderboard-partition">
+                Pontos
+            </div>
+        </div>
+
         {% for user in leaderboard %}
-            <tr>
-                <td>{{user.position}}</td>
-                <td>{{user.name}}</td>
-                <td>{{user.score}}/{{n_questions}}</td>
-                <td>{{user.time}}</td>
-            </tr>
+        <div class="leaderboard-item">
+            <div class="leaderboard-partition">
+                #{{user.position}}
+            </div>
+            <div class="leaderboard-partition">
+                {{user.name}}
+            </div>
+            <div class="leaderboard-partition">
+                {{user.time}}
+            </div>
+            <div class="leaderboard-partition">
+                {{user.score}}/{{n_questions}}
+            </div>
+        </div>
         {% endfor %}
-    </table>
+    </div>
 </div>
+
+{% endblock %}

@@ -1,0 +1,52 @@
+html {
+    font-size: 32px;
+    scroll-behavior: smooth;
+}
+  
+body {
+    font-size: 32px;
+    font-family: "Nunito";
+    margin: 0;
+    background-color: #0C4B33;
+    color: #42B78B;
+    height: 100vh;
+}
+
+
+a{
+    text-decoration: none;
+    color: inherit;
+}
+
+header{
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    align-items: center;
+    height: 75px;
+    border-bottom: #42B78B;
+    border-bottom-width: 4px;
+    border-bottom-style: solid;
+    padding: 10px;
+}
+
+.logo{
+    height: 65px;
+}
+
+.logo-text{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-left: 20px;
+}
+
+.logo-text h1{
+    font-size: 1rem;
+    font-weight: 800;
+}
+
+#content{
+    height: calc(100% - 140px);
+    padding: 20px;
+}

@@ -1,8 +1,22 @@
-<h1>Welcome</h1>
+{% extends "./base.html" %}
+{% load static %}
+
+{% block head %}
+    <link rel="stylesheet" href="{% static 'styles/home.css' %}"/>
+{% endblock %}
+
+
+{% block content %}
+
+<div class="quizzes">
 {% for quiz in quizzes %}
-        <div style="border-color: #000; border-width: 1; border-style: solid; margin: 10px; padding: 15px;">
-            <h1>{{quiz}}</h1>
-            <h2>ID: {{quiz.id}}</h2>
-            <a href="./details/{{quiz.id}}">Detalhes</a>
+    <a href="./details/{{quiz.id}}" class="quiz">
+        <div>
+            <p class="title">{{quiz}}</p>
+            <p class="n_questoes">{{quiz.n_questions}} perguntas</h2>
         </div>
+    </a>
 {% endfor %}
+</div>
+
+{% endblock %}

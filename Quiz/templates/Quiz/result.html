@@ -1,17 +1,39 @@
-<div style="padding: 15px;">
-    <h1>{{attempt.quiz.title}}</h1>
-    <h2>{{attempt.name}}</h2>
-    <h3>Points: {{attempt.n_points}}</h3>
-    <h3>Tempo: {{attempt.total_time}}</h3>
-    {% for answer in answers %}
-        <div style="border-color: #000; border-width: 1; border-style: solid; margin: 10px; padding: 15px;">
-            <h3>{{answer.question}}</h1>
-            <ul>
-                <li>Resposta: {{answer.answered}}</li>
-                <li>Resposta correta: {{answer.correct_answer}}</li>
-            </ul>
-            <p>Acertou: {{answer.correct}}</p>
-        </div>
-    {% endfor %}
-    <a href="../">Voltar</a>
+{% extends "./base.html" %}
+{% load static %}
+
+{% block head %}
+    <link rel="stylesheet" href="{% static 'styles/result.css' %}"/>
+{% endblock %}
+
+{% block content %}
+
+<span class="section-title">Resultado:</span>
+<div class="details-container">
+    <p class="attempt-result">Pontos: {{attempt.n_points}}</p>
+    <p class="attempt-result">Tempo: {{attempt.total_time}}</p>
 </div>
+
+<span class="section-title">Respostas:</span>
+<div class="answers">
+{% for answer in answers %}
+    <div class="answer-item">
+        <span class="question">{{answer.question}}</span>
+            {%if answer.correct == False%}
+                <div class="answer">
+                    <img class="check-img" src="{% static 'imagens/wrong.png' %}">
+                    <span>{{answer.answered}}</span>
+                </div>
+            {%endif%}
+            <div class="answer">
+                <img class="check-img" src="{% static 'imagens/correct.png' %}">
+                <span>{{answer.correct_answer}}</span>
+            </div>
+    </div>
+{% endfor %}
+</div>
+
+<div class="button-container">
+    <div class="button" onclick="window.location.assign('../details/{{attempt.quiz.id}}')">Voltar</div>
+</div>
+
+{% endblock %}

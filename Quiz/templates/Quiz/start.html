@@ -1,5 +1,19 @@
-<form action="./{{quiz.id}}" method="post">
-    {% csrf_token %}
-    {{ form }}
-    <input type="submit" value="Submit">
-</form>
+{% extends "./base.html" %}
+{% load static %}
+
+{% block head %}
+    <link rel="stylesheet" href="{% static 'styles/start.css' %}"/>
+{% endblock %}
+
+
+{% block content %}
+<div class="form-container">
+    <form id="name-form" action="./{{quiz.id}}" method="post">
+        {% csrf_token %}
+        {{ form }}
+        <div class="button-container">
+            <div class="button" onclick="document.querySelector('#name-form').submit()">Começar</div>
+        </div>
+    </form>
+</div>
+{% endblock %}

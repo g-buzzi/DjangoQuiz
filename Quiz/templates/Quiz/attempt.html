@@ -1,14 +1,37 @@
-<h1>{{question}}</h1>
-<form action="../answer/{{attempt.id}}" method="post">
+{% extends "./base.html" %}
+{% load static %}
+
+{% block head %}
+    <link rel="stylesheet" href="{% static 'styles/attempt.css' %}"/>
+{% endblock %}
+
+{% block content %}
+
+<h2 class="question">{{question_number}}. {{question}}</h2>
+<form id="answer-form" action="../answer/{{attempt.id}}" method="post">
     {% csrf_token %}
     <input hidden="true">
-    <input type="radio" id="op1" name="answer" value="1" required>
-    <label for="op1">{{question.op1}}</label><br>
-    <input type="radio" id="op2" name="answer" value="2">
-    <label for="op2">{{question.op2}}</label><br>
-    <input type="radio" id="op3" name="answer" value="3">
-    <label for="op3">{{question.op3}}</label><br>
-    <input type="radio" id="op4" name="answer" value="4">
-    <label for="op4">{{question.op4}}</label><br>
-    <input type="submit" value="Submit">
+    <div class="opt-container">
+        <input class="radio" type="radio" id="op1" name="answer" value="1" required>
+        <label for="op1">{{question.op1}}</label><br>
+    </div>
+    <div class="opt-container">
+        <input class="radio" type="radio" id="op2" name="answer" value="2">
+        <label for="op2">{{question.op2}}</label><br>
+    </div>
+    <div class="opt-container">
+        <input class="radio" type="radio" id="op3" name="answer" value="3">
+        <label for="op3">{{question.op3}}</label><br>
+    </div>
+    <div class="opt-container">
+        <input class="radio" type="radio" id="op4" name="answer" value="4">
+        <label for="op4">{{question.op4}}</label><br>
+    </div>
+    <div class="button-container">
+        <div class="button" onclick="document.querySelector('#answer-form').submit()">
+            Responder
+        </div>
+    </div>
 </form>
+
+{% endblock %}
