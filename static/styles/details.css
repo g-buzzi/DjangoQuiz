@@ -33,11 +33,12 @@
     align-items: center;
     justify-content: center;
     margin-top: 20px;
+    padding-bottom: 20px;
 }
 
 .button{
     border-radius: 15px;
-    padding: 5px 10px 5px 10px;
+    padding: 5px 20px 5px 20px;
     background-color: #42B78B;
     color: #0C4B33;
     font-size: 1rem;
@@ -51,10 +52,6 @@
 
 .button:hover{
     opacity: 0.5;
-}
-
-.leaderboard-container{
-    padding-bottom: 40px;
 }
 
 .leaderboard-title{
