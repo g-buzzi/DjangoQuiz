@@ -1,3 +1,5 @@
+import math
+from time import time
 from django.db import models
 from django.contrib.auth.models import User
  
@@ -43,6 +45,13 @@ class Attempt(models.Model):
             return self.end_time - self.start_time
         except:
             return None
+
+    def total_time_string(self):
+        time_passed = self.end_time - self.start_time
+        seconds = time_passed.seconds
+        minutes = seconds//60
+        seconds = seconds%60
+        return "{:02d}:{:02d}.{:.4}".format(minutes, seconds, str(time_passed.microseconds))
 
     def __str__(self):
         return str(self.quiz) + " | " + self.name + " | "

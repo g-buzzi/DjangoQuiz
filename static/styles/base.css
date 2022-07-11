@@ -23,15 +23,22 @@ header{
     flex-direction: row;
     align-content: center;
     align-items: center;
-    height: 75px;
+    height: 2rem;
     border-bottom: #42B78B;
     border-bottom-width: 4px;
     border-bottom-style: solid;
     padding: 10px;
 }
 
+header a{
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    align-items: center;
+}
+
 .logo{
-    height: 65px;
+    height: 2rem;
 }
 
 .logo-text{
@@ -49,4 +56,27 @@ header{
 #content{
     height: calc(100% - 140px);
     padding: 20px;
+}
+
+@media only screen and (max-width: 768px) {
+
+    html{
+        font-size: 24px;
+    }
+
+}
+
+@media only screen and (max-width: 600px) {
+
+    html{
+        font-size: 22px;
+    }
+
+}
+
+@media only screen and (max-width: 320px) {
+
+    html{
+        font-size: 18px;
+    }
 }

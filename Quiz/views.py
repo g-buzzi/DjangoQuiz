@@ -22,8 +22,8 @@ def quizDetails(request, quiz_id):
             filtered_attempts.append(attempts[i])
     filtered_attempts = sorted(filtered_attempts, key=lambda x: x.total_time(), reverse=False)
     filtered_attempts = sorted(filtered_attempts, key=lambda x: x.n_points(), reverse=True)
-    for attempt in filtered_attempts:
-        leaderboard.append({"position": position, "name": attempt.name, "score": attempt.n_points(), "time": attempt.total_time()})
+    for attempt in filtered_attempts[:10]:
+        leaderboard.append({"position": position, "name": attempt.name, "score": attempt.n_points(), "time": attempt.total_time_string()})
         position += 1
     context = {'quiz': quiz, "n_questions": len(quiz.question_set.all()), "leaderboard": leaderboard}
     return render(request,'Quiz/details.html',context)

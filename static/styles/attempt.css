@@ -20,6 +20,7 @@
 }
 
 .opt-container label{
+    font-size: 1.4rem;
     color: #0C4B33;
     font-weight: 800;
     margin-left: 10px;
@@ -31,8 +32,8 @@
     appearance: none;
     font: inherit;
     color: #0C4B33;
-    width: 1.15em;
-    height: 1.15em;
+    width: 1.6rem;
+    height: 1.6rem;
     background-color: #0C4B33;
     border: 0.15em solid #0C4B33;
     border-radius: 50%;
@@ -42,12 +43,12 @@
 
 .radio::before {
     content: "";
-    width: 0.65em;
-    height: 0.65em;
+    width: 1.2rem;
+    height: 1.2rem;
     border-radius: 50%;
     transform: scale(0);
     transition: 120ms transform ease-in-out;
-    box-shadow: inset 1em 1em #42B78B;
+    box-shadow: inset 1rem 1rem #42B78B;
   }
   
 .radio:checked::before {
@@ -67,7 +68,7 @@
     padding: 5px 25px 5px 25px;
     background-color: #42B78B;
     color: #0C4B33;
-    font-size: 1rem;
+    font-size: 1.2rem;
     font-weight: 800;
     align-self: center;
     justify-self: center;

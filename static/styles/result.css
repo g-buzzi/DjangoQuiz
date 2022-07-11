@@ -19,7 +19,7 @@
     color: #0C4B33;
     font-weight: 800;
     font-size: 1.2rem;
-    margin: 10px 0px 0px 0px;
+    margin: 5px 0px 5px 0px;
 }
 
 .answers{
@@ -45,7 +45,7 @@
 
 .question{
     color: #0C4B33;
-    font: 1.2rem;
+    font-size: 1.4rem;
     font-weight: 800;
 }
 
@@ -54,11 +54,12 @@
     flex-direction: row;
     margin: 5px 0px 5px 0px;
     display: flex;
-    align-items: center;
+    align-items: flex-start;
 }
 
 .check-img{
     height: 1rem;
+    margin-top: 0.2rem;
 }
 
 .answer span{
@@ -81,7 +82,7 @@
     padding: 5px 20px 5px 20px;
     background-color: #42B78B;
     color: #0C4B33;
-    font-size: 1rem;
+    font-size: 1.2rem;
     font-weight: 800;
     align-self: center;
     justify-self: center;

@@ -41,7 +41,7 @@
     padding: 5px 20px 5px 20px;
     background-color: #42B78B;
     color: #0C4B33;
-    font-size: 1rem;
+    font-size: 1.2rem;
     font-weight: 800;
     align-self: center;
     justify-self: center;
@@ -55,6 +55,7 @@
 }
 
 .leaderboard-title{
+    font-size: 1.2rem;
     margin: 0px 0px 20px 0px;
 }
 
@@ -78,7 +79,17 @@
 }
 
 .leaderboard-partition{
+    font-size: 0.7rem;
+    flex: 3;
+}
+
+.leaderboard-partition.time{
+    flex: 3;
+}
+
+.leaderboard-partition.score{
     flex: 1;
+    min-width: calc(fit-content + 10px);
 }
 
 .leaderboard-item{
